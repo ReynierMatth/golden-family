@@ -6,7 +6,7 @@ export const Navbar = () => {
 
     return (
         <header
-            className="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-rosewood-300 text-sm py-4 dark:bg-rosewood-900 border-b-2 border-gray-700">
+            className="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-rosewood-300 text-sm py-4 dark:bg-rosewood-900 border-b-2 border-gray-400">
             <nav className="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between"
                  aria-label="Global">
                 <div className="flex items-center justify-between">
@@ -18,7 +18,7 @@ export const Navbar = () => {
                                 aria-controls="navbar-collapse-with-animation" aria-label="Toggle navigation">
                             <svg className="hs-collapse-open:hidden w-4 h-4" width="16" height="16" fill="currentColor"
                                  viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
+                                <path fillRule="evenodd"
                                       d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                             </svg>
                             <svg className="hs-collapse-open:block hidden w-4 h-4" width="16" height="16"
@@ -53,7 +53,7 @@ export const Navbar = () => {
                             Signup free
                             <svg className="w-2.5 h-auto" width="17" height="16" viewBox="0 0 17 16" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                <path fillRule="evenodd" clipRule="evenodd"
                                       d="M1 7C0.447715 7 -3.73832e-07 7.44771 -3.49691e-07 8C-3.2555e-07 8.55228 0.447715 9 1 9L13.0858 9L7.79289 14.2929C7.40237 14.6834 7.40237 15.3166 7.79289 15.7071C8.18342 16.0976 8.81658 16.0976 9.20711 15.7071L16.0303 8.88388C16.5185 8.39573 16.5185 7.60427 16.0303 7.11612L9.20711 0.292893C8.81658 -0.0976318 8.18342 -0.0976318 7.79289 0.292893C7.40237 0.683417 7.40237 1.31658 7.79289 1.70711L13.0858 7L1 7Z"
                                       fill="currentColor"/>
                             </svg>

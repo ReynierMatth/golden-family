@@ -1,8 +1,13 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
+import {UserContext} from "../../../core/_contexts/UserContext";
+
+
+
 
 export const Signup: React.FC = () => {
 
-    const supabaseApi: string = import.meta.env.VITE_SUPABASE_API_URL
+    const userRepository = useContext(UserContext);
+
     const [email, setEmail] = useState('')
     const [validEmail, setValidEmail] = useState(false)
     const [password, setPassword] = useState('')
@@ -36,12 +41,23 @@ export const Signup: React.FC = () => {
         setConfirmPassword(e.target.value)
     }
 
+    const handleSubmit =async (e: any) => {
+        e.preventDefault()
+        if (validEmail && passwordMatch) {
+            console.log('valid')
+            const user = userRepository.signup(email, password)
+            console.log(user)
+        } else {
+            console.log('invalid')
+        }
+    }
+
     useEffect(() => {
         setPasswordMatch(password === confirmPassword && password !== '' && confirmPassword !== '')
     }, [confirmPassword, password])
 
     return (
-        <div className={"bg-rosewood-800 flex justify-center  min-h-screen w-full h-full p-5"}>
+        <form className={"bg-rosewood-800 flex justify-center  min-h-screen w-full h-full p-5"} onSubmit={handleSubmit}>
             <div className={"h-full flex p-5 flex-col items-center justify-center  border-2 rounded bg-rosewood-900 border-gray-400 "}>
                 <h1 className={"pt-5 text-2xl text-gray-400"}>Welcome to Golden Family</h1>
 
@@ -121,7 +137,8 @@ export const Signup: React.FC = () => {
                 </div>
                 {
                     (passwordMatch && validPassword) ? (
-                            <button type="button"
+                            <button
+                                type="submit"
                                     className="mt-5 py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border-2 border-yellow-200 font-semibold text-yellow-500 hover:text-white hover:bg-yellow-500 hover:border-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-200 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
                                 Validate
                             </button>
@@ -135,6 +152,6 @@ export const Signup: React.FC = () => {
                 }
 
             </div>
-        </div>
+        </form>
     )
 }

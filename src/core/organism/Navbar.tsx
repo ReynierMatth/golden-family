@@ -2,7 +2,10 @@ import {useNavigate} from "react-router-dom";
 
 export const Navbar = () => {
 
+    const session =  JSON.parse(localStorage.getItem('session'))
     const navigate = useNavigate()
+
+    console.log(session)
 
     return (
         <header
@@ -40,24 +43,29 @@ export const Navbar = () => {
                           onClick={() => {
                               navigate('/my-profile')
                           }}>Mon profil</a>
-                        <button type="button"
-                                className="py-3 px-4 py-3 px-4 inline-flex justify-center
+                        {
+                            session ? (
+                                <div>Bonjour {session.user.email}</div>
+                            ):(<button type="button"
+                                       className="py-3 px-4 py-3 px-4 inline-flex justify-center
                                  items-center gap-2 rounded-md border font-medium bg-white
                                  text-grey-400 shadow-sm align-middle hover:bg-rosewood-900
                                   focus:outline-none transition-all text-sm
                                    dark:bg-rosewood-900 dark:hover:bg-rosewood-800 dark:border-gray-400 dark:text-gray-400
                                    dark:hover:text-white dark:hover:border-white"
-                        onClick={() => {
-                            navigate('/signup')
-                        }}>
-                            Signup free
-                            <svg className="w-2.5 h-auto" width="17" height="16" viewBox="0 0 17 16" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path fillRule="evenodd" clipRule="evenodd"
-                                      d="M1 7C0.447715 7 -3.73832e-07 7.44771 -3.49691e-07 8C-3.2555e-07 8.55228 0.447715 9 1 9L13.0858 9L7.79289 14.2929C7.40237 14.6834 7.40237 15.3166 7.79289 15.7071C8.18342 16.0976 8.81658 16.0976 9.20711 15.7071L16.0303 8.88388C16.5185 8.39573 16.5185 7.60427 16.0303 7.11612L9.20711 0.292893C8.81658 -0.0976318 8.18342 -0.0976318 7.79289 0.292893C7.40237 0.683417 7.40237 1.31658 7.79289 1.70711L13.0858 7L1 7Z"
-                                      fill="currentColor"/>
-                            </svg>
-                        </button>
+                                       onClick={() => {
+                                           navigate('/signup')
+                                       }}>
+                                Signup
+                                <svg className="w-2.5 h-auto" width="17" height="16" viewBox="0 0 17 16" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fillRule="evenodd" clipRule="evenodd"
+                                          d="M1 7C0.447715 7 -3.73832e-07 7.44771 -3.49691e-07 8C-3.2555e-07 8.55228 0.447715 9 1 9L13.0858 9L7.79289 14.2929C7.40237 14.6834 7.40237 15.3166 7.79289 15.7071C8.18342 16.0976 8.81658 16.0976 9.20711 15.7071L16.0303 8.88388C16.5185 8.39573 16.5185 7.60427 16.0303 7.11612L9.20711 0.292893C8.81658 -0.0976318 8.18342 -0.0976318 7.79289 0.292893C7.40237 0.683417 7.40237 1.31658 7.79289 1.70711L13.0858 7L1 7Z"
+                                          fill="currentColor"/>
+                                </svg>
+                            </button>)
+                        }
+
 
                     </div>
                 </div>

@@ -47,7 +47,7 @@ export class SupabaseUserRepositoryImpl implements UserRepository {
 
     }
 
-    async isEmailTaken(email: string): boolean {
+    async isEmailTaken(email: string): Promise<boolean> {
         try {
             const { data:users } = await sudb.from('users').select('*').eq('email', email);
             return users.length > 0;

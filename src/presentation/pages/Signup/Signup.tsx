@@ -45,8 +45,7 @@ export const Signup: React.FC = () => {
         e.preventDefault()
         if (validEmail && passwordMatch) {
             console.log('valid')
-            const user = userRepository.signup(email, password)
-            console.log(user)
+            userRepository.signup(email, password)
         } else {
             console.log('invalid')
         }

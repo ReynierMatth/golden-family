@@ -12,6 +12,7 @@ export class SupabaseUserRepositoryImpl implements UserRepository {
             .then( (res) => {
                 console.log(`User ${email} logged in`)
                 // You can store the session data in local storage or in a redux store
+                console.log("res", res.data.session)
                 localStorage.setItem('session', JSON.stringify(res.data.session))
             })
             .catch(error => {

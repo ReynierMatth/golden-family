@@ -1,8 +1,8 @@
 import {UserRepository} from "../../../domain/repository/UserRepository";
 import {createClient} from "@supabase/supabase-js";
 
-const sudb = createClient('https://xrjqpgloidxweglyfqwy.supabase.co',
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhyanFwZ2xvaWR4d2VnbHlmcXd5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzQ1ODQwODYsImV4cCI6MTk5MDE2MDA4Nn0.J84oKYo01xM033bCPZiSaOQLOMriZ3bYCj8y148PWh8')
+const sudb = createClient(import.meta.env.VITE_SUPABASE_PROJECT_URL as string,
+    import.meta.env.VITE_SUPABASE_ANON_KEY as string)
 
 
 export class SupabaseUserRepositoryImpl implements UserRepository {
@@ -49,6 +49,7 @@ export class SupabaseUserRepositoryImpl implements UserRepository {
 
     async isEmailTaken(email: string): Promise<boolean> {
         try {
+            console.log(`Checking if email ${email} is taken`)
             const { data:users } = await sudb.from('users').select('*').eq('email', email);
             return users.length > 0;
         } catch (error) {

@@ -45,7 +45,14 @@ export const Signup: React.FC = () => {
         e.preventDefault()
         if (validEmail && passwordMatch) {
             console.log('valid')
-            userRepository.signup(email, password)
+            let alreadyExistEmail = await userRepository.isEmailTaken(email)
+            if(alreadyExistEmail){
+                console.log('email already exist')
+                return;
+            }else{
+                userRepository.signup(email, password)
+            }
+
         } else {
             console.log('invalid')
         }

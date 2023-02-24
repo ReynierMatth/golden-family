@@ -1,11 +1,21 @@
 import {useNavigate} from "react-router-dom";
+import {useContext, useEffect, useState} from "react";
+import {UserContext} from "../_contexts/UserContext";
 
 export const Navbar = () => {
 
-    const session =  JSON.parse(localStorage.getItem('session'))
+    const userRepository = useContext(UserContext);
     const navigate = useNavigate()
+    const [user, setUser] = useState();
 
-    console.log(session)
+
+    useEffect(() => {
+        userRepository.getUser().then((res) => {
+            setUser(res)
+        })
+    }, [])
+
+    console.log(user)
 
     return (
         <header
@@ -44,8 +54,22 @@ export const Navbar = () => {
                               navigate('/my-profile')
                           }}>Mon profil</a>
                         {
-                            session ? (
-                                <div>Bonjour {session.user.email}</div>
+                            user ? (
+                                <div>
+                                <div>Bonjour {user.email}</div>
+                                <button type="button"
+                                        className="py-3 px-4 py-3 px-4 inline-flex justify-center
+                                    items-center gap-2 rounded-md border font-medium bg-white
+                                    text-grey-400 shadow-sm align-middle hover:bg-rosewood-900
+                                        focus:outline-none transition-all text-sm
+                                        dark:bg-rosewood-900 dark:hover:bg-rosewood-800 dark:border-gray-400 dark:text-gray-400
+                                        dark:hover:text-white dark:hover:border-white"
+                                        onClick={() => {
+                                            userRepository.logout()
+                                        }}>
+                                    Logout
+                                </button>
+                                    </div>
                             ):(<button type="button"
                                        className="py-3 px-4 py-3 px-4 inline-flex justify-center
                                  items-center gap-2 rounded-md border font-medium bg-white

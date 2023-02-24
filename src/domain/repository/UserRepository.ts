@@ -4,5 +4,7 @@ export interface UserRepository {
     login(email: string, password: string): void;
     logout(): void;
     signup(email: string, password: string): void;
-    isEmailTaken(email: string): boolean;
+    isEmailTaken(email: string): Promise<boolean>;
+
+    getUser(): Promise<User | null>;
 }

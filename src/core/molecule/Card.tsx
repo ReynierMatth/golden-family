@@ -6,7 +6,7 @@ type Props = {
 
 export const Card = ({game}: Props) => {
     return (
-        <a className="flex flex-col group max-h-64 bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg transition dark:bg-rosewood-900 dark:border-gray-700 dark:shadow-slate-700/[.7]"
+        <a className="flex flex-col group max-h-64 bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg transition dark:bg-navi-900 dark:border-gray-700 dark:shadow-slate-700/[.7]"
            href="#">
             <div className="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] rounded-t-xl overflow-hidden">
                 <img

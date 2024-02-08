@@ -19,7 +19,7 @@ export const Navbar = () => {
 
     return (
         <header
-            className="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-rosewood-300 text-sm py-4 dark:bg-rosewood-900 border-b-2 border-gray-400">
+            className="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-navi-300 text-sm py-4 dark:bg-navi-900 border-b-2 border-gray-400">
             <nav className="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between"
                  aria-label="Global">
                 <div className="flex items-center justify-between">
@@ -60,9 +60,9 @@ export const Navbar = () => {
                                 <button type="button"
                                         className="py-3 px-4 py-3 px-4 inline-flex justify-center
                                     items-center gap-2 rounded-md border font-medium bg-white
-                                    text-grey-400 shadow-sm align-middle hover:bg-rosewood-900
+                                    text-grey-400 shadow-sm align-middle hover:bg-navi-900
                                         focus:outline-none transition-all text-sm
-                                        dark:bg-rosewood-900 dark:hover:bg-rosewood-800 dark:border-gray-400 dark:text-gray-400
+                                        dark:bg-navi-900 dark:hover:bg-navi-800 dark:border-gray-400 dark:text-gray-400
                                         dark:hover:text-white dark:hover:border-white"
                                         onClick={() => {
                                             userRepository.logout()
@@ -73,9 +73,9 @@ export const Navbar = () => {
                             ):(<button type="button"
                                        className="py-3 px-4 py-3 px-4 inline-flex justify-center
                                  items-center gap-2 rounded-md border font-medium bg-white
-                                 text-grey-400 shadow-sm align-middle hover:bg-rosewood-900
+                                 text-grey-400 shadow-sm align-middle hover:bg-navi-900
                                   focus:outline-none transition-all text-sm
-                                   dark:bg-rosewood-900 dark:hover:bg-rosewood-800 dark:border-gray-400 dark:text-gray-400
+                                   dark:bg-navi-900 dark:hover:bg-navi-800 dark:border-gray-400 dark:text-gray-400
                                    dark:hover:text-white dark:hover:border-white"
                                        onClick={() => {
                                            navigate('/signup')

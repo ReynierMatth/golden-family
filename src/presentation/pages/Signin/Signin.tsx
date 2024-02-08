@@ -38,8 +38,8 @@ export const Signin: React.FC = () => {
 
 
     return (
-        <form className={"bg-rosewood-800 flex justify-center  min-h-screen w-full h-full p-5"} onSubmit={handleSubmit}>
-            <div className={"h-full flex p-5 flex-col items-center justify-center  border-2 rounded bg-rosewood-900 border-gray-400 "}>
+        <form className={"bg-navi-800 flex justify-center  min-h-screen w-full h-full p-5"} onSubmit={handleSubmit}>
+            <div className={"h-full flex p-5 flex-col items-center justify-center  border-2 rounded bg-navi-900 border-gray-400 "}>
                 <h1 className={"pt-5 text-2xl text-gray-400"}>Welcome back to Golden Family</h1>
 
                 <div className={"relative mt-10"}>
@@ -47,14 +47,14 @@ export const Signin: React.FC = () => {
                            className="block  ml-1 text-sm font-medium mb-2 dark:text-white">Email</label>
 
                     <input type="email"
-                           className="py-3 px-4 w-96 block w-full border focus:ring-gray-200 dark:focus:ring-gray-200 dark:border-gray-200  rounded-md text-sm dark:bg-rosewood-900  dark:text-gray-400"
+                           className="py-3 px-4 w-96 block w-full border focus:ring-gray-200 dark:focus:ring-gray-200 dark:border-gray-200  rounded-md text-sm dark:bg-navi-900  dark:text-gray-400"
                            placeholder="Email" onChange={emailChange}/>
                 </div>
                 <div className={"relative mt-5"}>
                     <label htmlFor="with-corner-hint"
                            className="block   ml-1 text-sm font-medium mb-2 dark:text-white">Password</label>
                     <input type="password"
-                           className="py-3 px-4 w-96 block w-full border focus:ring-gray-200 dark:focus:ring-gray-200 dark:border-gray-200  rounded-md text-sm dark:bg-rosewood-900  dark:text-gray-400"
+                           className="py-3 px-4 w-96 block w-full border focus:ring-gray-200 dark:focus:ring-gray-200 dark:border-gray-200  rounded-md text-sm dark:bg-navi-900  dark:text-gray-400"
                            placeholder="Password" onChange={passwordChange}/>
                 </div>
 

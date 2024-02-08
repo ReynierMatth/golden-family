@@ -19,7 +19,7 @@ export const Landing: React.FC = () => {
     }
 
     return (
-        <div className={"w-full h-full min-h-screen flex justify-evenly pt-10 bg-rosewood-800"}>
+        <div className={"w-full h-full min-h-screen flex justify-evenly pt-10 bg-navi-800"}>
             <Card game={game1}/>
             <Card game={game2}/>
         </div>

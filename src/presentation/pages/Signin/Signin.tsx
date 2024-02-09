@@ -2,6 +2,7 @@ import React, {useContext, useState} from "react";
 import {UserContext} from "../../../core/_contexts/UserContext";
 import {useNavigate} from "react-router-dom";
 import {LoginUseCase} from "../../../domain/usecase/user/login.usecase";
+import {ImageCarousel} from "../../../core/molecule/Carousel";
 
 
 
@@ -38,7 +39,13 @@ export const Signin: React.FC = () => {
 
 
     return (
-        <form className={"bg-navi-800 flex justify-center  min-h-screen w-full h-full p-5"} onSubmit={handleSubmit}>
+        <>
+        <ImageCarousel
+            images={["/card1.jpg", "/card2.jpg", "/card3.jpg", "/card4.jpg"]}
+            carouselClassName="absolute z-10 top-50 h-96 w-60"
+            imageClassName="rounded-lg shadow-lg h-80 absolute w-60"
+        />
+        <form className={"bg-navi-800 z-20 flex justify-center  min-h-screen w-full h-full p-5"} onSubmit={handleSubmit}>
             <div className={"h-full flex p-5 flex-col items-center justify-center  border-2 rounded bg-navi-900 border-gray-400 "}>
                 <h1 className={"pt-5 text-2xl text-gray-400"}>Welcome back to Deckerr</h1>
 
@@ -69,5 +76,6 @@ export const Signin: React.FC = () => {
                 </button>
             </div>
         </form>
+        </>
     )
 }

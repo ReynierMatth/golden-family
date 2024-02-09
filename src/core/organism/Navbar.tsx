@@ -23,7 +23,7 @@ export const Navbar = () => {
             <nav className="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between"
                  aria-label="Global">
                 <div className="flex items-center justify-between">
-                    <a className="flex-none text-xl font-semibold dark:text-amber-400" href="#">Golden Family</a>
+                    <a className="flex-none text-xl font-semibold dark:text-amber-400" href="#">Deckerr</a>
                     <div className="sm:hidden">
                         <button type="button"
                                 className="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-gray-800 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"

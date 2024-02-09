@@ -68,7 +68,7 @@ export const Signup: React.FC = () => {
     return (
         <form className={"bg-navi-800 flex justify-center  min-h-screen w-full h-full p-5"} onSubmit={handleSubmit}>
             <div className={"h-full flex p-5 flex-col items-center justify-center  border-2 rounded bg-navi-900 border-gray-400 "}>
-                <h1 className={"pt-5 text-2xl text-gray-400"}>Welcome to Golden Family</h1>
+                <h1 className={"pt-5 text-2xl text-gray-400"}>Welcome to Deckerr</h1>
 
                 <div className={"relative mt-10"}>
                     <label htmlFor="with-corner-hint"

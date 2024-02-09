@@ -8,8 +8,9 @@ import {Signup} from "./presentation/pages/Signup/Signup";
 import {Signin} from "./presentation/pages/Signin/Signin";
 import {UserContext} from "./core/_contexts/UserContext";
 import {SupabaseUserRepositoryImpl} from "./data/repository/supabase/SupabaseUserRepositoryImpl";
+import {LocalUserRepositoryImpl} from "./data/repository/local/LocalUserRepositoryImpl";
 
-const userRepositoryImpl = new SupabaseUserRepositoryImpl();
+const userRepositoryImpl = new LocalUserRepositoryImpl();
 
 function App() {
 

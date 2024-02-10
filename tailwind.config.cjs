@@ -52,8 +52,16 @@ module.exports = {
             '800': '#663d00',
             '900': '#331f00',
           },
-        }
-
+        },
+        animation: {
+            'infinite-scroll': 'infinite-scroll 25s linear infinite',
+        },
+        keyframes: {
+            'infinite-scroll': {
+                from: { transform: 'translateX(0)' },
+                to: { transform: 'translateX(-100%)' },
+            }
+        },
     },
   },
   plugins: [

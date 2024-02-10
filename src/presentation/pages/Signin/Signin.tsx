@@ -2,7 +2,7 @@ import React, {useContext, useState} from "react";
 import {UserContext} from "../../../core/_contexts/UserContext";
 import {useNavigate} from "react-router-dom";
 import {LoginUseCase} from "../../../domain/usecase/user/login.usecase";
-import {ImageCarousel} from "../../../core/molecule/Carousel";
+import {MovingBackground} from "../../../core/molecule/MovingBackground";
 
 
 
@@ -23,9 +23,6 @@ export const Signin: React.FC = () => {
     }
 
 
-
-
-
     const passwordChange = (e: any) => {
         setPassword(e.target.value)
     }
@@ -39,17 +36,16 @@ export const Signin: React.FC = () => {
 
 
     return (
-        <>
-        <ImageCarousel
-            images={["/card1.jpg", "/card2.jpg", "/card3.jpg", "/card4.jpg"]}
-            carouselClassName="absolute z-10 top-50 h-96 w-60"
-            imageClassName="rounded-lg shadow-lg h-80 absolute w-60"
-        />
-        <form className={"bg-navi-800 z-20 flex justify-center  min-h-screen w-full h-full p-5"} onSubmit={handleSubmit}>
-            <div className={"h-full flex p-5 flex-col items-center justify-center  border-2 rounded bg-navi-900 border-gray-400 "}>
+        <div className={"relative"}>
+
+            <MovingBackground images={["images/card1.jpg", "images/card2.jpg", "images/card3.jpg", "images/card4.jpg", "images/card1.jpg", "images/card2.jpg", "images/card3.jpg",]}
+                              imagesClassName={"w-96 h-96 mx-6 rounded-lg shadow-lg"}
+                              wrapperClassName={"z-0 top-50 w-full h-1/2 blur absolute"}></MovingBackground>
+        <form className={"bg-navi-800 z-10 flex justify-center  min-h-screen w-full h-full p-5"} onSubmit={handleSubmit}>
+            <div className={"h-full z-10 flex p-5 flex-col items-center justify-center  border-2 rounded bg-navi-900 border-gray-400 "}>
                 <h1 className={"pt-5 text-2xl text-gray-400"}>Welcome back to Deckerr</h1>
 
-                <div className={"relative mt-10"}>
+                <div className={"relative z-10 mt-10"}>
                     <label htmlFor="with-corner-hint"
                            className="block  ml-1 text-sm font-medium mb-2 dark:text-white">Email</label>
 
@@ -57,7 +53,7 @@ export const Signin: React.FC = () => {
                            className="py-3 px-4 w-96 block w-full border focus:ring-gray-200 dark:focus:ring-gray-200 dark:border-gray-200  rounded-md text-sm dark:bg-navi-900  dark:text-gray-400"
                            placeholder="Email" onChange={emailChange}/>
                 </div>
-                <div className={"relative mt-5"}>
+                <div className={"relative z-10 mt-5"}>
                     <label htmlFor="with-corner-hint"
                            className="block   ml-1 text-sm font-medium mb-2 dark:text-white">Password</label>
                     <input type="password"
@@ -71,11 +67,11 @@ export const Signin: React.FC = () => {
                 </div>
                 <button
                     type="submit"
-                    className="mt-5 py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border-2 border-yellow-200 font-semibold text-yellow-500 hover:text-white hover:bg-yellow-500 hover:border-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-200 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
+                    className="z-10 mt-5 py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border-2 border-yellow-200 font-semibold text-yellow-500 hover:text-white hover:bg-yellow-500 hover:border-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-200 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
                     Sign in
                 </button>
             </div>
         </form>
-        </>
+        </div>
     )
 }

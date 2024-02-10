@@ -1,22 +1,21 @@
 import React, {useContext, useState} from "react";
-import {UserContext} from "../../../core/_contexts/UserContext";
+import {UserContext} from "../../../../core/_contexts/UserContext";
 import {useNavigate} from "react-router-dom";
-import {LoginUseCase} from "../../../domain/usecase/user/login.usecase";
-import {MovingBackground} from "../../../core/molecule/MovingBackground";
+import {LoginUseCase} from "../../../../domain/usecase/user/login.usecase";
+import {MovingBackground} from "../../../../core/molecule/MovingBackground";
 
 
+type SignInProps = {
+    setIsSignup: (bool: boolean) => void
+}
 
-
-export const Signin: React.FC = () => {
+export const Signin: React.FC<SignInProps> = ({setIsSignup}) => {
 
     const userRepository = useContext(UserContext);
     const loginUseCase: LoginUseCase = new LoginUseCase(userRepository)
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-
-    const navigate = useNavigate()
-
 
     const emailChange = (e: any) => {
         setEmail(e.target.value)
@@ -36,11 +35,7 @@ export const Signin: React.FC = () => {
 
 
     return (
-        <div className={"relative"}>
 
-            <MovingBackground images={["images/card1.jpg", "images/card2.jpg", "images/card3.jpg", "images/card4.jpg", "images/card1.jpg", "images/card2.jpg", "images/card3.jpg",]}
-                              imagesClassName={"w-96 h-96 mx-6 rounded-lg shadow-lg"}
-                              wrapperClassName={"z-0 top-50 w-full h-1/2 blur absolute"}></MovingBackground>
         <form className={"bg-navi-800 z-10 flex justify-center  min-h-screen w-full h-full p-5"} onSubmit={handleSubmit}>
             <div className={"h-full z-10 flex p-5 flex-col items-center justify-center  border-2 rounded bg-navi-900 border-gray-400 "}>
                 <h1 className={"pt-5 text-2xl text-gray-400"}>Welcome back to Deckerr</h1>
@@ -63,7 +58,7 @@ export const Signin: React.FC = () => {
 
 
                 <div className={"relative mt-2 ml-1 mr-auto text-white text-sm font-medium mb-2 underline hover:no-underline "}>
-                    <a onClick={() => navigate('/signup')}>Not registered yet ?</a>
+                    <a onClick={() => setIsSignup(true)}>Not registered yet ?</a>
                 </div>
                 <button
                     type="submit"
@@ -72,6 +67,5 @@ export const Signin: React.FC = () => {
                 </button>
             </div>
         </form>
-        </div>
     )
 }

@@ -78,7 +78,7 @@ export const Navbar = () => {
                                    dark:bg-navi-900 dark:hover:bg-navi-800 dark:border-gray-400 dark:text-gray-400
                                    dark:hover:text-white dark:hover:border-white"
                                        onClick={() => {
-                                           navigate('/signup')
+                                           navigate('/auth')
                                        }}>
                                 Signup
                                 <svg className="w-2.5 h-auto" width="17" height="16" viewBox="0 0 17 16" fill="none"

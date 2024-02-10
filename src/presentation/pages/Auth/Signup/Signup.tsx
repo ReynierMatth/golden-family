@@ -1,11 +1,14 @@
 import React, {useContext, useEffect, useState} from "react";
-import {UserContext} from "../../../core/_contexts/UserContext";
+import {UserContext} from "../../../../core/_contexts/UserContext";
 import {useNavigate} from "react-router-dom";
 
 
+type SignUpProps = {
+    setIsSignup: (bool: boolean) => void
+}
 
 
-export const Signup: React.FC = () => {
+export const Signup: React.FC<SignUpProps> = ({setIsSignup}) => {
 
     const userRepository = useContext(UserContext);
 
@@ -66,8 +69,8 @@ export const Signup: React.FC = () => {
     }, [confirmPassword, password])
 
     return (
-        <form className={"bg-navi-800 flex justify-center  min-h-screen w-full h-full p-5"} onSubmit={handleSubmit}>
-            <div className={"h-full flex p-5 flex-col items-center justify-center  border-2 rounded bg-navi-900 border-gray-400 "}>
+        <form className={"z-10 bg-navi-800 flex justify-center  min-h-screen w-full h-full p-5"} onSubmit={handleSubmit}>
+            <div className={"z-10 h-full flex p-5 flex-col items-center justify-center  border-2 rounded bg-navi-900 border-gray-400 "}>
                 <h1 className={"pt-5 text-2xl text-gray-400"}>Welcome to Deckerr</h1>
 
                 <div className={"relative mt-10"}>
@@ -145,7 +148,7 @@ export const Signup: React.FC = () => {
                     }
                 </div>
                 <div className={"relative mt-2 ml-1 mr-auto text-white text-sm font-medium mb-2 underline hover:no-underline "}>
-                    <a onClick={() => navigate('/signin')}>Already registered ?</a>
+                    <a onClick={() => setIsSignup(false)}>Already registered ?</a>
                 </div>
                 {
                     (passwordMatch && validPassword) ? (
